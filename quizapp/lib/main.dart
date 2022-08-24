@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'question.dart';
-import 'package:cool_alert/cool_alert.dart'; //package to display alert
 
 void main() {
   runApp(const QuizApp());
@@ -109,13 +108,15 @@ class _QuizAppState extends State<QuizApp> {
                   ),
                   onPressed: () {
                     setState(() {
-                      if (questions[questionnumber].answer == false)
+                      if (questions[questionnumber].answer == false) {
+                        marks++;
                         score.add(
                           Icon(
                             Icons.done,
                             color: Colors.green,
                           ),
                         );
+                      }
                       else
                         score.add(
                           Icon(
@@ -155,6 +156,8 @@ class _QuizAppState extends State<QuizApp> {
     );
   }
 }
+
+//I've create a new page just to display score to the user
 
 class ScoreCard extends StatelessWidget {
   // const ScoreCard({Key? key}) : super(key: key);
