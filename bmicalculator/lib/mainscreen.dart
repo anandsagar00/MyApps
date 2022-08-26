@@ -88,12 +88,14 @@ class _MyHomeState extends State<MyHome> {
                 ],
               ),
               Expanded(child: HeightWidget()),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  AgeWeight('WEIGHT', 1),
-                  AgeWeight('AGE', 2),
-                ],
+              Expanded(
+                child : Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(child: AgeWeight('WEIGHT', 1)),
+                    Expanded(child: AgeWeight('AGE', 2)),
+                  ],
+                ),
               ),
               GestureDetector(
                 child: Container(
@@ -146,14 +148,15 @@ class _HeightWidgetState extends State<HeightWidget> {
         color: kSecondaryUIColor,
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          SizedBox(height: 10,width: double.infinity,),
           Text(
             'HEIGHT',
             style: TextStyle(color: Colors.white70, fontSize: 20),
             textAlign: TextAlign.center,
           ),
+          SizedBox(height: 10,width: double.infinity,),
           Row(
             textBaseline: TextBaseline.alphabetic,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -166,6 +169,7 @@ class _HeightWidgetState extends State<HeightWidget> {
               ),
             ],
           ),
+          SizedBox(height: 10,width: double.infinity,),
           Slider(
             value: height.toDouble(),
             onChanged: (double valueOnSlider) {
@@ -188,6 +192,7 @@ class _HeightWidgetState extends State<HeightWidget> {
             inactiveColor:
                 (selected == 0) ? Colors.white70 : Colors.limeAccent,
           ),
+          SizedBox(height: 10,width: double.infinity,),
         ],
       ),
     );
