@@ -238,12 +238,13 @@ class _AgeWeightState extends State<AgeWeight> {
                     age--;
                 });
               },
+                heroTag: 'button1',
                 child: Icon(Icons.remove),
                 backgroundColor: Color(0x291D1F32),
                 elevation: 3,
               ),
               SizedBox(width: 10,),
-              FloatingActionButton(onPressed:()
+              FloatingActionButton(heroTag:'button2',onPressed:()
               {
                 setState(() {
                   if(variable==1)
