@@ -149,6 +149,7 @@ class _HeightWidgetState extends State<HeightWidget> {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           SizedBox(height: 10,width: double.infinity,),
           Text(
